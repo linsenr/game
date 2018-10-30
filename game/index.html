@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="1.css">
+	<script src="jquery.min.js"></script>
+	<script src="responsiveslides.min.js"></script>
+    <script src="slide.js"></script>
+	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>game</title>
+</head>
+<body>
+	<div id="max">
+	 <div class="slide_container">
+      <ul class="rslides" id="slider">
+        <li>
+          <img src="lunbo/1.jpg" alt="">
+          <p class="caption">标题1</p>
+        </li>
+        <li>
+          <img src="lunbo/2.jpg" alt="">
+          <p class="caption">标题2</p>
+        </li>
+        <li>
+          <img src="lunbo/1.jpg" alt="">
+          <p class="caption">标题1</p>
+        </li>
+      </ul>
+    </div>
+		<header>
+			<ul>
+				<li>游戏首页</li>
+				<li>游戏推荐</li>
+				<li>角色推荐</li>
+				<li>精彩视频</li>
+			</ul>
+		</header>
+		<article>
+			<section id="p1">《英雄联盟》(简称LOL)是由美国拳头游戏(Riot Games)开发、中国大陆地区腾讯游戏代理运营的英雄对战MOBA竞技网游。游戏里拥有数百个个性英雄，并拥有排位系统、符文系统等特色养成系统。《英雄联盟》还致力于推动全球电子竞技的发展。</section>
+			<section id="p2"><img src="images/tu2.jpg"></section>
+			<section id="p3">人类城邦诺克萨斯坐落在瓦罗兰大陆远东中心，它在道德准则上和德玛西亚对比大相径庭。这个城市无论在物质上还是精神上都不择手段的追求强大权力，丝毫不顾对别人带来的影响。</section>
+			<section id="p4"><img src="images/tu3.jpg"></section>
+		</article>
+		<nav>
+			<img src="images/tu4.jpg">
+			<img src="images/tu5.jpg">
+			<img src="images/tu6.jpg">
+			<img src="images/tu7.jpg">
+			<ul>
+				<li>流浪法师</li>
+				<li>赏金猎人</li>
+				<li>艾希</li>
+				<li>盖伦</li>
+			</ul>
+		</nav>
+		<aside>
+			<div id="left"><img src="images/tu9.jpg"></div>
+			<div id="right"> <video src="video/1.mp4" controls="controls"></video>
+        </div>
+		</aside>
+		<footer>版权仅属个人娱乐，禁止盗窃</footer>
+	</div>
+<script>
+	(function(win) {
+    var doc = win.document;
+    var docEl = doc.documentElement;
+    var tid;
+
+    function refreshRem() {
+        var width = docEl.getBoundingClientRect().width;
+        if (width > 540) { // 最大宽度
+            width = 540;
+        }
+        var rem = width / 7.5; // 将屏幕宽度分成10份， 1份为1rem
+        docEl.style.fontSize = rem + 'px';
+    }
+    win.addEventListener('resize', function() {
+        clearTimeout(tid);
+        tid = setTimeout(refreshRem, 300);
+    }, false);
+    win.addEventListener('pageshow', function(e) {
+        if (e.persisted) {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+        }
+    }, false);
+
+    refreshRem();
+
+})(window);
+</script>	
+</body>
+</html>
